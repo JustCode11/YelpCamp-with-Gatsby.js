@@ -1,0 +1,123 @@
+@use '../utils/' as u;
+@use '../globals/' as v;
+
+.signFormsContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    @include u.breakpoint-up(desktop) {
+        flex-direction: row;
+    }
+
+    &__contentContainer {
+
+        @include u.breakpoint-up(desktop) {
+            width: 50%;
+        }
+
+        header {
+            height: u.rem(100);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .linkBack {
+                color: v.$darkGrey;
+                text-decoration: none;
+                font-size: u.rem(15);
+            }
+        }
+
+        main {
+            padding-bottom: u.rem(25);
+
+            @include u.breakpoint-up(desktop) {
+                position: relative;
+                top: 13%;
+            }
+
+            h1 {
+                font-size: u.rem(32);
+                margin-bottom: u.rem(20);
+                line-height: u.rem(34);
+
+                @include u.breakpoint-up(tablet) {
+                    font-size: u.rem(32);
+                }
+            }
+
+            .spacing>*+* {
+                margin-top: u.rem(23);
+            }
+
+            .signForm {
+                margin-bottom: u.rem(20);
+
+                @include u.breakpoint-up(tablet) {
+                    width: 80%;
+                }
+
+                @include u.breakpoint-up(desktop) {
+                    width: 100%;
+                }
+
+                &__errorMessage {
+                    color: v.$error;
+                    font-weight: 700;
+                }
+
+                &__inputField {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                button {
+                    width: 100%;
+                }
+            }
+
+            .linkToForm {
+                color: v.$linkColor;
+                font-weight: 700;
+            }
+        }
+    }
+
+    &__testimonialContainer {
+        background-color: v.$lightBeige;
+        position: relative;
+        height: 42%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include u.breakpoint-up(desktop) {
+            height: 100%;
+            width: 50%;
+        }
+
+        .testimonialText {
+            color: v.$black;
+            font-size: u.rem(22);
+            font-weight: 700;
+            margin-bottom: u.rem(20);
+        }
+
+        .testimonialProfileContainer {
+            display: flex;
+            align-items: center;
+
+            &__text {
+                display: flex;
+                flex-direction: column;
+                margin-left: u.rem(15);
+
+                &__name {
+                    color: v.$black;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+@use '../utils/' as u;
+
+$landingPageSpacingMobile: 17;
+$landingPageSpacingTablet: 40;
+$landingPageSpacingDesktop: 148;
+
+.containerLandingPage {
+    padding-left: u.rem($landingPageSpacingMobile);
+    padding-right: u.rem($landingPageSpacingMobile);
+
+    @include u.breakpoint-up(tablet) {
+        padding-left: u.rem($landingPageSpacingTablet);
+        padding-right: u.rem($landingPageSpacingTablet);
+    }
+
+    @include u.breakpoint-up(desktop) {
+        padding-left: u.rem($landingPageSpacingDesktop);
+        padding-right: u.rem($landingPageSpacingDesktop);
+    }
+}
+
+$pageSpacingMobile: 18;
+$pageSpacingTablet: 40;
+$pageSpacingDesktop: 150;
+
+.container {
+    padding-left: u.rem($pageSpacingMobile);
+    padding-right: u.rem($pageSpacingMobile);
+
+    @include u.breakpoint-up(tablet) {
+        padding-left: u.rem($pageSpacingTablet);
+        padding-right: u.rem($pageSpacingTablet);
+    }
+
+    @include u.breakpoint-up(desktop) {
+        padding-left: u.rem($pageSpacingDesktop);
+        padding-right: u.rem($pageSpacingDesktop);
+    }
+}

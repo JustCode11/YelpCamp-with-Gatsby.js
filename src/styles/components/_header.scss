@@ -1,0 +1,110 @@
+@use '../utils/' as u;
+@use '../globals/' as v;
+
+.infoBox {
+    background-color: black;
+    color: white;
+    height: u.rem(75);
+    position: relative;
+    top: 0;
+    transition: all 300ms ease-in-out;
+
+    &.close {
+        height: 0;
+        padding: 0;
+
+        .infoBox__fullContainer__textContainer {
+            display: none;
+        }
+
+        .infoBox__fullContainer__closeIcon {
+            display: none;
+        }
+    }
+
+    &__fullContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        &__textContainer {
+            text-align: center;
+            padding-right: u.rem(35);
+
+            a {
+                color: v.$neonBlue;
+            }
+        }
+
+        &__closeIcon {
+            display: flex;
+            cursor: pointer;
+
+            &__icon {
+                width: u.rem(12);
+                height: u.rem(12);
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.header {
+    height: u.rem(100);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include u.breakpoint-up(desktop) {
+        height: u.rem(120);
+    }
+
+    a {
+        color: v.$darkGrey;
+        text-decoration: none;
+    }
+
+    &__imgContainer {
+        display: flex;
+        align-items: end;
+
+        &__link {
+            font-weight: 700;
+            margin-left: u.rem(20);
+        }
+    }
+
+    &__buttonContainer {
+
+        &__hamburgerButton {
+            background-color: v.$lightBeige;
+            padding: u.rem(10);
+            border-radius: u.rem(5);
+            cursor: pointer;
+
+            >span {
+                display: block;
+                width: u.rem(17);
+                height: u.rem(2);
+                background-color: v.$black;
+
+                &:not(:last-child) {
+                    margin-bottom: u.rem(3);
+                }
+            }
+        }
+    }
+
+    &__userContainer {
+        &__profile {
+            margin-right: u.rem(15);
+            color: v.$black;
+            font-weight: 700;
+        }
+
+        &__link {
+            margin-right: u.rem(20);
+        }
+    }
+}

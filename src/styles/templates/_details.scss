@@ -1,0 +1,147 @@
+@use '../utils/' as u;
+@use '../globals/' as v;
+
+.details {
+    display: flex;
+    flex-direction: column;
+
+    @include u.breakpoint-up(desktop) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__content {
+        .spacing>*+* {
+            margin-top: u.rem(15);
+        }
+
+        @include u.breakpoint-up(desktop) {
+            order: 1;
+            //width: 45%;
+        }
+
+        .dc {
+            padding: u.rem(32);
+            border: u.rem(1) solid v.$grey;
+            border-radius: u.rem(5);
+            margin-bottom: u.rem(40);
+
+            &__image {
+                height: u.rem(185);
+                border-radius: u.rem(10);
+
+                @include u.breakpoint-up(tablet) {
+                    height: u.rem(360);
+                }
+
+                @include u.breakpoint-up(desktop) {
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            &__titleContainer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                h1 {
+                    font-size: u.rem(22);
+                }
+
+                &__price {
+                    color: v.$black;
+                }
+            }
+
+            &__user {
+                font-style: italic;
+            }
+        }
+
+        .cc {
+            padding: u.rem(32);
+            border: u.rem(1) solid v.$grey;
+            border-radius: u.rem(5);
+
+            @include u.breakpoint-down(desktop) {
+                margin-bottom: u.rem(40);
+            }
+
+            &__commentContainer {
+                border-bottom: u.rem(1) solid v.$grey;
+
+                &:not(:last-child) {
+                    padding-bottom: u.rem(20);
+                }
+
+                &:not(:first-child) {
+                    padding-top: u.rem(20);
+                }
+            }
+
+            &__buttonContainer {
+                display: inline-block;
+                position: relative;
+                margin-top: u.rem(25);
+                cursor: pointer;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: calc(50% - (u.rem(25) / 2));
+                    bottom: 0;
+                    left: u.rem(20);
+                    right: 0;
+                    width: u.rem(24);
+                    height: u.rem(25);
+                    background-color: v.$white;
+                    -webkit-mask: url('../images/icons/chatBubble.svg') no-repeat center;
+                    mask: url('../images/icons/chatBubble.svg') no-repeat center;
+                    transition: background-color 200ms ease-in-out;
+                }
+
+                &:hover {
+                    &::before {
+                        background-color: v.$black;
+                    }
+
+                    .cc__buttonContainer__button {
+                        background-color: white;
+                        color: black;
+                        padding: u.rem(14) u.rem(24) u.rem(14) u.rem(54);
+                        border: 1px solid black;
+                    }
+                }
+
+                &__button {
+                    padding-left: u.rem(55);
+                }
+            }
+        }
+    }
+
+    &__map {
+        padding: u.rem(32);
+        border: u.rem(1) solid v.$grey;
+        border-radius: u.rem(5);
+
+        @include u.breakpoint-up(desktop) {
+            height: 100%;
+            margin-right: u.rem(37);
+        }
+
+        &__container {
+
+            iframe {
+                width: 100%;
+                height: u.rem(350);
+
+                @include u.breakpoint-up(desktop) {
+                    width: u.rem(290);
+                    height: u.rem(385);
+                }
+            }
+        }
+    }
+}

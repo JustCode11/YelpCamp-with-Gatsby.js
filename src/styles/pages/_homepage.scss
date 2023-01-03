@@ -1,0 +1,80 @@
+@use '../utils/' as u;
+@use '../globals/' as v;
+
+.searchSection {
+    background-color: v.$lightBeige;
+    padding: u.rem(31);
+    margin-bottom: u.rem(35);
+
+    h1 {
+        margin-bottom: u.rem(10);
+    }
+
+    p {
+        margin-bottom: u.rem(10);
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: u.rem(20);
+
+        @include u.breakpoint-up(tablet) {
+            flex-direction: row;
+        }
+
+        &__inputField {
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: u.rem(20);
+                bottom: 0;
+                left: u.rem(20);
+                right: 0;
+                width: u.rem(16);
+                height: u.rem(17);
+                background-image: url('../images/icons/searchIcon.svg');
+                background-repeat: no-repeat;
+            }
+
+            input[type="text"] {
+                width: 100%;
+                padding-left: u.rem(45);
+                background-color: v.$white;
+                border: u.rem(1) solid v.$black;
+
+                @include u.breakpoint-down(mobile) {
+                    margin-bottom: u.rem(20);
+                }
+            }
+        }
+
+        button {
+            @include u.breakpoint-up(tablet) {
+                margin-left: u.rem(15);
+            }
+        }
+    }
+
+    a {
+        color: grey;
+    }
+}
+
+.campCardsContainer {
+    display: grid;
+    row-gap: u.rem(15);
+    justify-content: center;
+
+    @include u.breakpoint-up(tablet) {
+        grid-template-columns: 1fr 1fr;
+        column-gap: u.rem(20);
+    }
+
+    @include u.breakpoint-up(desktop) {
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: u.rem(25);
+    }
+}

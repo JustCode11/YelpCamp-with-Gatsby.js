@@ -1,0 +1,46 @@
+@use '../utils/' as u;
+@use '../globals/' as v;
+
+.addForm {
+    &.spacing>*+* {
+        margin-top: u.rem(23);
+    }
+
+    @include u.breakpoint-up(tablet) {
+        width: 85%;
+    }
+
+    @include u.breakpoint-up(desktop) {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    &__headline {
+        @include u.breakpoint-up(tablet) {
+            font-size: u.rem(34);
+        }
+
+        @include u.breakpoint-up(desktop) {
+            font-size: u.rem(34);
+        }
+    }
+
+    &__inputField {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin-bottom: u.rem(5);
+        }
+
+        &__textarea {
+            height: u.rem(225);
+        }
+    }
+
+    button {
+        width: 100%;
+    }
+}

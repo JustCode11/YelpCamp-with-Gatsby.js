@@ -1,0 +1,16 @@
+@use '../utils/' as u;
+@use '../globals/' as v;
+
+.comment {
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: u.rem(15);
+
+        &__user {
+            color: v.$black;
+            font-weight: 700;
+        }
+    }
+}

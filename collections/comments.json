@@ -1,0 +1,19 @@
+[{
+  "_id": "comment1",
+  "content": "Honestly one of the best experiences ever, took us a while to figure out how to get there but it was amazing!",
+  "campground_id": "camp1",
+  "user": "Adam Jones",
+  "created_at": "2022-10-18T14:10:30.000Z"
+},{
+  "_id": "comment2",
+  "content": "Traveling changes you as a person, you gain more perspective, this is the perfect spot to do that.",
+  "campground_id": "camp1",
+  "user": "Isaac Dylan",
+  "created_at": "2022-10-17T14:10:30.000Z"
+},{
+  "_id": "comment3",
+  "content": "Definitely recommend going there, not too far and not a lot of people to ruin the experience.",
+  "campground_id": "camp1",
+  "user": "Hudson Luca",
+  "created_at": "2022-10-15T14:10:30.000Z"
+}]

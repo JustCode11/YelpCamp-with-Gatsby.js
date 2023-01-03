@@ -1,0 +1,8 @@
+@use '../utils/' as u;
+@use '../globals/' as v;
+
+.footer {
+    height: u.rem(170);
+    display: flex;
+    align-items: center;
+}
